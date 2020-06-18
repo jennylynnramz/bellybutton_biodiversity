@@ -72,11 +72,11 @@ function optionChanged(){
 
                     var data_bar = [{
                         type: 'bar',
-                        y: filtered_otu_ids_OTU_added,
-                        x: filtered_sample_values,
-                        text: filtered_otu_labels,
-                        name: filtered_otu_labels,                      
-                        orientation: 'h'
+                        y: filtered_otu_ids_OTU_added.reverse(),
+                        x: filtered_sample_values.reverse(),
+                        text: filtered_otu_labels.reverse(),
+                        name: filtered_otu_labels.reverse(),                      
+                        orientation: 'h',
                       }];
 
                     var bar_layout = {
@@ -170,13 +170,41 @@ function optionChanged(){
                 /////gauge graph of wfrew
                 var gauge_data = [
                   {
-                    // domain: { x: [0, 10], y: [0, 10] },
                     value: metadata_set[n]["wfreq"],
-                    title: { text: "Washing Frequency" },
+                    title: { text: "\<b>\Bellybutton Washing Frequency\</b>\ \<br>\ Scrubs Per Week"},
                     type: "indicator",
-                    mode: "gauge+number"
-                  }
-                ];
+                    mode: "gauge+number", 
+                    gauge: {
+                      bar: { color: "gray", thickness: .1 },
+                      axis: { range: [0, 10] },
+                      steps: [
+                        { range: [0, 1], color: "#F9FBE7" },
+                        { range: [1, 2], color: "#f0f4c3" },
+                        { range: [2, 3], color: "#E6ee9c" },
+                        { range: [3, 4], color: "#dce775" },
+                        { range: [4, 5], color: "#d4e157" },
+                        { range: [5, 6], color: "#cddc39" },
+                        { range: [6, 7], color: "#c0ca33" },
+                        { range: [7, 8], color: "#AFB42B" },
+                        { range: [8, 9], color: "#9e9d24" },
+                        { range: [9, 10], color: "#827717" }
+                      ],
+                        threshold: {
+                          line: { color: "gray", width: 5}, len: "500",
+                          value: metadata_set[n]["wfreq"]
+                          },
+                        bgcolor: "lightgrey",
+                        
+
+
+                      
+                      }
+
+
+                    
+                    
+                  }];
+                
                 
                 var gauge_layout = { width: 600, height: 500, margin: { t: 0, b: 0 } };
 
