@@ -159,8 +159,26 @@ function optionChanged(){
                                           Location: ${metadata_set[n]["location"]}<br>
                                           Bellybutton Type: ${metadata_set[n]["bbtype"]}<br>
                                           Wash Frequency: ${metadata_set[n]["wfreq"]}<br>`;                
-                // Insert text
                 document.getElementById("sample-metadata").appendChild(demographics);
+                
+                /////gauge graph of wfrew
+                var gauge_data = [
+                  {
+                    // domain: { x: [0, 10], y: [0, 10] },
+                    value: metadata_set[n]["wfreq"],
+                    title: { text: "Washing Frequency" },
+                    type: "indicator",
+                    mode: "gauge+number"
+                  }
+                ];
+                
+                var gauge_layout = { width: 600, height: 500, margin: { t: 0, b: 0 } };
+
+                Plotly.newPlot('gauge', gauge_data, gauge_layout);
+
+
+
+
 
                 break
 
