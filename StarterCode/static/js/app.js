@@ -151,7 +151,12 @@ function optionChanged(){
                 console.log(metadata_set[n]["wfreq"])
                 console.log("conditions met. breaking now!")
 
-                var demographics = document.createElement("P");                 // Create a <p> element
+                function clearBox(elementID) {
+                    document.getElementById("sample-metadata").innerHTML = "";
+                }
+                clearBox()
+
+                var demographics = document.createElement("P"); 
                 demographics.innerHTML = `ID: ${metadata_set[n]["id"]} <br>
                                           Ethnicity: ${metadata_set[n]["ethnicity"]} <br>
                                           Gender: ${metadata_set[n]["gender"]} <br>
@@ -161,6 +166,7 @@ function optionChanged(){
                                           Wash Frequency: ${metadata_set[n]["wfreq"]}<br>`;                
                 document.getElementById("sample-metadata").appendChild(demographics);
                 
+
                 /////gauge graph of wfrew
                 var gauge_data = [
                   {
