@@ -1,6 +1,6 @@
 # Belly Button Biodiversity Dashboard
 
-## Demo - [Click here](https://jennylynnramz.github.io/plotly/StarterCode/)
+## Demo - [Click here](http://jennylynnramz.com/bellybutton_biodiversity/)
 
 ## Desciption
 * This project explores [belly button biodiversity dataset](https://github.com/jennylynnramz/plotly/blob/master/data/samples.json).
