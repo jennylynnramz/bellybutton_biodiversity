@@ -3,7 +3,7 @@
 ## Demo - [Click here](http://jennylynnramz.com/bellybutton_biodiversity/)
 
 ## Desciption
-* This project explores [belly button biodiversity dataset](https://github.com/jennylynnramz/plotly/blob/master/data/samples.json).
+* This project explores [belly button biodiversity dataset](https://github.com/jennylynnramz/bellybutton_biodiversity/blob/master/samples.json).
 * This project filters data based on user input and creates colorful charts using D3 and Plotly.
 
 ## Built With
